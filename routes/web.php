@@ -21,6 +21,8 @@ Route::get('/logout', function () {
     Session::forgot('user');
     return view('login');
 });
+Route::get('user/create', 'HomeController@create');
+Route::post('user/create', 'HomeController@store');
 Route::view('/register','register');
 Route::post("/login",[usercontroller::class,'login']);
 Route::post("/register",[usercontroller::class,'register']);
